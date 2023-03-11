@@ -6,12 +6,12 @@ import time
 i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000, timeout=5000)
 
 print ("san du bus i2c")
-devices = i2c.scan()    #rangement des adresses des périphériques dans une list.
+devices = i2c.scan()                             #rangement des adresses des périphériques dans une list.
 
-if len(devices) == 0:
+if len(devices) == 0:                           #vérification si il y a au moins un périphérique
     print("aucun périphérique sur le bus I2C")
-else :
-    print("périphérique trouvé:",len(devices))
+else :                                          #affichage des adresses des périphériques présent.
+    print("périphérique trouvé:",len(devices)) 
     for i in devices:
         print("decimal", i)
         print("hexadecimal", hex(i))
